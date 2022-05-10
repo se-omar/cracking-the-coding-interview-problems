@@ -2,7 +2,7 @@
 
 public class CheckPermutation
 {
-    // o(n) time, 
+    // O(n) time, O(1) space.
     public bool Solution(string strA, string strB)
     {
         int[] occurs = new int[128];
