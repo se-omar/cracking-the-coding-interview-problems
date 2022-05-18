@@ -1,7 +1,7 @@
-﻿using System.Runtime.Intrinsics.Arm;
+﻿using System.Buffers;
+using System.Runtime.Intrinsics.Arm;
 
 namespace CTCIProblems.ArraysAndStrings;
-
 public class OneAway
 {
     public bool Solution(string s1, string s2)
@@ -47,6 +47,4 @@ public class OneAway
 
         return true;
     }
-
-
 }
