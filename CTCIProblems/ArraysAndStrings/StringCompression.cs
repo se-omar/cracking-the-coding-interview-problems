@@ -7,26 +7,19 @@ public class StringCompression
     string Solution(string s)
     {
         int counter = 0;
-        int comparer = 0;
         StringBuilder ans = new StringBuilder();
 
         for (int i = 0; i < s.Length; i++)
         {
-            if (s[comparer] == s[i]) counter++;
+            counter++;
 
-            if (s[comparer] != s[i] || i + 1 >= s.Length)
+            if (i+1 >= s.Length || s[i] != s[i + 1])
             {
-                if (counter > 0)
-                {
-                    ans.Append(s[comparer]);
-                    ans.Append(counter);
-                }
-
-                comparer = i;
-                counter = 1;
+                ans.Append(s[i]).Append(counter);
+                counter = 0;
             }
         }
 
-        return ans.ToString();
+        return ans.ToString().Length >= s.Length? s : ans.ToString();
     }
 }
