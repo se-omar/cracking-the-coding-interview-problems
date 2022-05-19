@@ -7,7 +7,7 @@ public class StringCompression
     string Solution(string s)
     {
         int counter = 0;
-        StringBuilder ans = new StringBuilder();
+        StringBuilder compressedStr = new StringBuilder();
 
         for (int i = 0; i < s.Length; i++)
         {
@@ -15,11 +15,11 @@ public class StringCompression
 
             if (i+1 >= s.Length || s[i] != s[i + 1])
             {
-                ans.Append(s[i]).Append(counter);
+                compressedStr.Append(s[i]).Append(counter);
                 counter = 0;
             }
         }
 
-        return ans.ToString().Length >= s.Length? s : ans.ToString();
+        return compressedStr.ToString().Length < s.Length? compressedStr.ToString() : s;
     }
 }
